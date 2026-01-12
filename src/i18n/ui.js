@@ -6,32 +6,26 @@ export const languages = {
 
 export const defaultLang = 'es';
 
+import es from './es.json';
+import ca from './ca.json';
+import en from './en.json';
+
 export const ui = {
-    es: {
-      'nav.home': 'Inicio',
-      'nav.about': 'Sobre mí',
-      'nav.experience': 'Experiencia',
-      'nav.projects': 'Proyectos',
-      'nav.contact': 'Contacto'
-    },
-    ca: {
-      'nav.home': 'Inici',
-      'nav.about': 'Sobre mi',
-      'nav.experience': 'Experiència',
-      'nav.projects': 'Projectes',
-      'nav.contact': 'Contacte'
-    },
-    en: {
-      'nav.home': 'Home',
-      'nav.about': 'About',
-      'nav.experience': 'Experience',
-      'nav.projects': 'Projects',
-      'nav.contact': 'Contact'
-    }
+    es,
+    ca,
+    en
 };
 
 export function useTranslations(lang) {
     return function t(key) {
-        return ui[lang][key] || key;
+        const keys = key.split('.');
+        let result = ui[lang];
+        for (const k of keys) {
+            if (result === undefined || result === null) {
+                return key; // Return the key itself if any part of the path is not found
+            }
+            result = result[k];
+        }
+        return result || key;
     }
 }
