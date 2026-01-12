@@ -1,31 +1,79 @@
 ---
+const { t } = Astro.props;
 ---
 <section id="sobre-mi" class="py-16 bg-gray-50 dark:bg-gray-800">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">Sobre mí</h2>
+      <h2 class="text-3xl font-bold text-center mb-12">{t('about.title')}</h2>
       <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         <!-- Profile Image and Info -->
         <div class="space-y-6">
           <div class="relative">
-            <div class="bg-primary text-white p-4 rounded-lg">
-              <p class="text-2xl font-bold">Óscar Ródenas</p>
-              <p class="font-bold">Desarrollador Web</p>
-              <p class="font-bold">21 años</p>
-              <p>Viladecavalls, Barcelona, España</p>
+            <div class="bg-gradient-to-br from-primary to-secondary text-white p-6 rounded-xl shadow-lg">
+              <p class="text-2xl font-bold mb-1">{t('about.card.name')}</p>
+              <p class="font-semibold text-lg mb-1">{t('about.card.title')}</p>
+              <p class="text-white/90 mb-1">{t('about.card.age')}</p>
+              <p class="text-white/90">{t('about.card.location')}</p>
             </div>
           </div>
           
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
             <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
-              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+              <svg class="w-6 h-6 text-primary dark:text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 3L1 9l11 6l9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82Z"/>
               </svg>
-              Formación
+              {t('about.education.title')}
             </h3>
-            <p class="text-gray-600 dark:text-gray-300">
-              Actualmente estoy cursando el segundo año de DAW (Desarrollo de Aplicaciones Web) en el instituto Nicolau Copernic.
-              Me especializo en el desarrollo web, con un enfoque particular en tecnologías front-end y experiencia de usuario.
-            </p>
+            <div class="space-y-3">
+              <div>
+                <p class="font-semibold text-gray-900 dark:text-white">
+                  {t('about.education.degree')}
+                </p>
+                <p class="text-sm text-gray-600 dark:text-gray-300">
+                  {t('about.education.institution')}
+                </p>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 text-sm">
+                {t('about.education.description')}
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+            <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
+              <svg class="w-6 h-6 text-primary dark:text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.87 15.07l-2.54-2.51l.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35C8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5l3.11 3.11l.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24Z"/>
+              </svg>
+              {t('about.languages.title')}
+            </h3>
+            <div class="space-y-4">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-medium">{t('about.languages.ca')}</span>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">{t('about.languages.ca_level')}</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-medium">{t('about.languages.es')}</span>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">{t('about.languages.es_level')}</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 100%"></div>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-medium">{t('about.languages.en')}</span>
+                  <span class="text-sm text-gray-600 dark:text-gray-400">{t('about.languages.en_level')}</span>
+                </div>
+                <div class="w-full bg-gray-200 dark:bg-gray-600 rounded-full h-2">
+                  <div class="bg-gradient-to-r from-primary to-secondary h-2 rounded-full" style="width: 60%"></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
   
@@ -33,82 +81,83 @@
         <div class="space-y-6">
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
             <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
-              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.87 15.07l-2.54-2.51l.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35C8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5l3.11 3.11l.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7l1.62-4.33L19.12 17h-3.24Z"/>
+              <svg class="w-6 h-6 text-primary dark:text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M16 17v2H2v-2s0-4 7-4 7 4 7 4m-3.5-9.5A3.5 3.5 0 1 0 9 11a3.5 3.5 0 0 0 3.5-3.5m3.44 5.5A5.32 5.32 0 0 1 18 17v2h4v-2s0-3.63-6.06-4M15 4a3.39 3.39 0 0 0-1.93.59 5 5 0 0 1 0 5.82A3.39 3.39 0 0 0 15 11a3.5 3.5 0 0 0 0-7Z"/>
               </svg>
-              Idiomas
+              {t('about.soft_skills.title')}
             </h3>
-            <div class="space-y-4">
-              <div class="flex items-center justify-between">
-                <span>Catalán</span>
-                <div class="flex gap-1">
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
+            <div class="space-y-3">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary dark:text-secondary flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
+                </svg>
+                <div>
+                  <p class="font-medium">{t('about.soft_skills.teamwork_title')}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{t('about.soft_skills.teamwork_desc')}</p>
                 </div>
               </div>
-              <div class="flex items-center justify-between">
-                <span>Español</span>
-                <div class="flex gap-1">
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary dark:text-secondary flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
+                </svg>
+                <div>
+                  <p class="font-medium">{t('about.soft_skills.problem_solving_title')}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{t('about.soft_skills.problem_solving_desc')}</p>
                 </div>
               </div>
-              <div class="flex items-center justify-between">
-                <span>Inglés</span>
-                <div class="flex gap-1">
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-primary rounded-full"></span>
-                  <span class="w-4 h-4 bg-gray-300 rounded-full"></span>
-                  <span class="w-4 h-4 bg-gray-300 rounded-full"></span>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary dark:text-secondary flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
+                </svg>
+                <div>
+                  <p class="font-medium">{t('about.soft_skills.learning_title')}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{t('about.soft_skills.learning_desc')}</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary dark:text-secondary flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
+                </svg>
+                <div>
+                  <p class="font-medium">{t('about.soft_skills.proactivity_title')}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{t('about.soft_skills.proactivity_desc')}</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-primary dark:text-secondary flex-shrink-0 mt-0.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
+                </svg>
+                <div>
+                  <p class="font-medium">{t('about.soft_skills.detail_title')}</p>
+                  <p class="text-sm text-gray-600 dark:text-gray-400">{t('about.soft_skills.detail_desc')}</p>
                 </div>
               </div>
             </div>
           </div>
-  
+
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
             <h3 class="text-xl font-semibold mb-4 flex items-center gap-2">
-              <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
+              <svg class="w-6 h-6 text-primary dark:text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m4.2 14.2L11 13V7h1.5v5.2l4.5 2.7l-.8 1.3Z"/>
               </svg>
-              Actitudes
+              {t('about.availability.title')}
             </h3>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
-                </svg>
-                <span>Atento</span>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600 dark:text-gray-300">{t('about.availability.type_title')}</span>
+                <span class="font-medium">{t('about.availability.type_value')}</span>
               </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
-                </svg>
-                <span>Simpático</span>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600 dark:text-gray-300">{t('about.availability.modality_title')}</span>
+                <span class="font-medium">{t('about.availability.modality_value')}</span>
               </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
-                </svg>
-                <span>Proactivo</span>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600 dark:text-gray-300">{t('about.availability.incorporation_title')}</span>
+                <span class="font-medium">{t('about.availability.incorporation_value')}</span>
               </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
-                </svg>
-                <span>Con iniciativa</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <svg class="w-5 h-5 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10s10-4.5 10-10S17.5 2 12 2m-2 15l-5-5l1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9Z"/>
-                </svg>
-                <span>Competitivo</span>
+              <div class="flex items-center justify-between">
+                <span class="text-gray-600 dark:text-gray-300">{t('about.availability.mobility_title')}</span>
+                <span class="font-medium">{t('about.availability.mobility_value')}</span>
               </div>
             </div>
           </div>

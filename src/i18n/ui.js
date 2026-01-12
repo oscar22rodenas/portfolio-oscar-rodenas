@@ -2,11 +2,11 @@ export const languages = {
     es: 'Español',
     ca: 'Català',
     en: 'English'
-  };
-  
-  export const defaultLang = 'es';
-  
-  export const ui = {
+};
+
+export const defaultLang = 'es';
+
+export const ui = {
     es: {
       'nav.home': 'Inicio',
       'nav.about': 'Sobre mí',
@@ -28,5 +28,10 @@ export const languages = {
       'nav.projects': 'Projects',
       'nav.contact': 'Contact'
     }
-  };
-  
+};
+
+export function useTranslations(lang) {
+    return function t(key) {
+        return ui[lang][key] || key;
+    }
+}

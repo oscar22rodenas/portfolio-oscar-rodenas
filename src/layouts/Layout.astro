@@ -1,50 +1,147 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
 interface Props {
   title: string;
   description?: string;
+  lang?: string;
 }
 
-const { title, description = "Portfolio personal de Óscar Ródenas - Desarrollador Web" } = Astro.props;
+const { 
+  title, 
+  description = "Portfolio de Óscar Ródenas - Desarrollador Full-Stack especializado en Laravel y Vue.js. Disponible para trabajar en Barcelona.",
+  lang = 'es'
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL('/assets/og-image.png', Astro.site);
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Theme-setting script to prevent FOIT -->
+    <script is:inline>
+      const theme = (() => {
+        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+          return localStorage.getItem('theme');
+        }
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+        return 'light';
+      })();
+
+      if (theme === 'light') {
+        document.documentElement.classList.remove('dark');
+      } else {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="author" content="Óscar Ródenas" />
+    <meta name="keywords" content="Desarrollador Web, Full-Stack, Laravel, Vue.js, PHP, JavaScript, Barcelona, Portfolio, DAW" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_ES" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={ogImage} />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Óscar Ródenas Luján",
+        "jobTitle": "Desarrollador Full-Stack",
+        "url": "https://portfolio-oscarrodenas.vercel.app",
+        "image": "https://portfolio-oscarrodenas.vercel.app/assets/profile.jpg",
+        "sameAs": [
+          "https://github.com/oscar22rodenas",
+          "https://www.linkedin.com/in/oscar-rodenas"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Barcelona",
+          "addressCountry": "ES"
+        },
+        "knowsAbout": [
+          "Web Development",
+          "Laravel",
+          "Vue.js",
+          "PHP",
+          "JavaScript",
+          "Python",
+          "MySQL"
+        ],
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Institut Nicolau Copèrnic"
+        }
+      }
+    </script>
+    
+    <!-- Google Analytics - Reemplaza con tu ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DHBKHK5B5N"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DHBKHK5B5N');
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
-  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-    <Header />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white antialiased">
+    <slot />
   </body>
 </html>
 
-<style>
+<style is:global>
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
   }
   
   body {
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
   }
 
-  main {
-    flex: 1;
+  /* Mejora de accesibilidad */
+  :focus-visible {
+    outline: 2px solid #3245ff;
+    outline-offset: 2px;
+  }
+
+  /* Smooth scrolling para navegación */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
   }
 </style>

@@ -1,40 +1,53 @@
 ---
-const projects = [
-  {
-    title: "Portfolio Personal",
-    description: "Mi sitio web personal desarrollado con Astro y Tailwind CSS. Este proyecto muestra mis habilidades en el desarrollo web moderno, implementando características como modo oscuro, internacionalización (i18n) y diseño responsive. Utiliza tecnologías como Astro para el rendimiento óptimo, Tailwind CSS para el diseño, y JavaScript vanilla para la interactividad.",
-    image: "/assets/portfoli.png",
-    technologies: ["Astro", "Tailwind CSS", "JavaScript"],
-    github: "https://github.com/oscar22rodenas/portfolio",
-    featured: true
-  },
-  {
-    title: "Proyecte de Gestio de Hotels",
-    description: "Aplicación web para la gestión de hoteles desarrollada con Laravel en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades como gestión de habitaciones, reservas, hoteles y clientes. Aparte, de una web de la cadena de hoteles, más visual y desarrollada con Laravel y Vue.js, a partir de APIs de la base de datos de la web de gestion.",
-    image: "/assets/hotel.png",
-    technologies: ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Laravel", "Vue.js"],
-    github: "https://github.com/oscar22rodenas/proyecto_hoteles",
-  },
-  {
-    title: "Proyecte de Gestio de Subastas",
-    description: "Aplicación web para la gestión de subastas desarrollada con PHP en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades para el rol de subhastador que es la persona que gestiona todas las subastas y productos de los clientes i para los clientes donde pueden subir los productos.",
-    image: "/assets/logo_deal_cash.png",
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL",],
-    github: "https://github.com/oscar22rodenas/proyecto_subastas",
-  }
-];
+const { t } = Astro.props;
+
+// Reconstruct the projects array using translated data
+const projects = t('projects.list').map((translatedProject, index) => {
+  // Get the original project data to keep non-translatable properties like image, github, demo, featured
+  // For simplicity, we assume the order in JSON matches the order in the original component
+  // In a real app, you might use an ID or slug to match them
+  const originalProjects = [
+    {
+      image: "/assets/portfoli.png",
+      github: "https://github.com/oscar22rodenas/portfolio",
+      featured: true,
+      demo: "https://portfolio-oscarrodenas.vercel.app/" // Example demo link
+    },
+    {
+      image: "/assets/hotel.png",
+      github: "https://github.com/oscar22rodenas/proyecto_hoteles",
+      demo: "https://example.com/hotel-demo"
+    },
+    {
+      image: "/assets/logo_deal_cash.png",
+      github: "https://github.com/oscar22rodenas/proyecto_subastas",
+      demo: "https://example.com/auction-demo"
+    }
+  ];
+  const originalProject = originalProjects[index];
+
+  return {
+    ...originalProject,
+    title: translatedProject.title,
+    description: translatedProject.description,
+    technologies: translatedProject.technologies,
+  };
+});
 ---
 <section id="proyectos" class="py-16">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Proyectos</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">{t('projects.title')}</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       {projects.map(project => (
-        <article class="bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden">
+        <article class:list={[
+            "bg-white dark:bg-gray-700 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl",
+            project.featured && "lg:col-span-2"
+        ]}>
           <div class="aspect-video bg-gray-100 dark:bg-gray-600">
             <img 
               src={project.image} 
               alt={project.title}
-              class="w-full h-full object-fill aspect-video  border-2 border-primary dark:border-secondary"
+              class="w-full h-full object-cover aspect-video border-2 border-primary dark:border-secondary"
             />
           </div>
           <div class="p-6">
@@ -54,9 +67,18 @@ const projects = [
                 rel="noopener noreferrer"
                 class="flex items-center gap-2 text-primary dark:text-secondary hover:underline"
               >
-
-                GitHub
+                {t('projects.github_button')}
               </a>
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-2 text-primary dark:text-secondary hover:underline"
+                >
+                  {t('projects.demo_button')}
+                </a>
+              )}
             </div>
           </div>
         </article>

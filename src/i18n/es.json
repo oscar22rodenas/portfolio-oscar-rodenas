@@ -1,0 +1,136 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "alt": "Óscar Ródenas",
+    "title": "¡Hola! Soy Óscar Ródenas",
+    "description": "Desarrollador Full-Stack especializado en Laravel y Vue.js, con experiencia en automatización de procesos y gestión de datos. Busco mi primera oportunidad profesional en desarrollo web.",
+    "contact_button": "Contáctame",
+    "cv_button": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "card": {
+        "name": "Óscar Ródenas Luján",
+        "title": "Desarrollador Full-Stack",
+        "age": "21 años",
+        "location": "📍 Viladecavalls, Barcelona, España"
+    },
+    "education": {
+        "title": "Formación Académica",
+        "degree": "Técnico Superior en Desarrollo de Aplicaciones Web (DAW)",
+        "institution": "Institut Nicolau Copèrnic - 2023-2025",
+        "description": "Formación especializada en desarrollo web full-stack, con énfasis en tecnologías modernas como Laravel, Vue.js y arquitecturas MVC. Experiencia práctica en proyectos reales durante el período de prácticas profesionales."
+    },
+    "languages": {
+        "title": "Idiomas",
+        "ca": "Catalán",
+        "ca_level": "Nativo",
+        "es": "Español",
+        "es_level": "Nativo",
+        "en": "Inglés",
+        "en_level": "B1 - Intermedio"
+    },
+    "soft_skills": {
+        "title": "Habilidades Blandas",
+        "teamwork_title": "Trabajo en Equipo",
+        "teamwork_desc": "Experiencia colaborando en entornos ágiles",
+        "problem_solving_title": "Resolución de Problemas",
+        "problem_solving_desc": "Enfoque analítico para encontrar soluciones eficientes",
+        "learning_title": "Aprendizaje Continuo",
+        "learning_desc": "Siempre explorando nuevas tecnologías y metodologías",
+        "proactivity_title": "Proactividad",
+        "proactivity_desc": "Tomo iniciativa para mejorar procesos y resultados",
+        "detail_title": "Atención al Detalle",
+        "detail_desc": "Código limpio y documentación precisa"
+    },
+    "availability": {
+        "title": "Disponibilidad",
+        "type_title": "Tipo de jornada:",
+        "type_value": "Completa",
+        "modality_title": "Modalidad:",
+        "modality_value": "Presencial / Híbrido",
+        "incorporation_title": "Incorporación:",
+        "incorporation_value": "Inmediata",
+        "mobility_title": "Movilidad:",
+        "mobility_value": "Barcelona y alrededores"
+    }
+  },
+  "experience": {
+    "title": "Experiencia",
+    "achievements_title": "Logros principales:",
+    "technologies_title": "Tecnologías:",
+    "skills_title": "Habilidades desarrolladas:",
+    "list": [
+      {
+        "title": "Prácticas FCT de Desarrollo de Aplicaciones Web Grado Superior",
+        "company": "IRIS Technology Solutions",
+        "period": "Septiembre 2024 - Enero 2025",
+        "location": "Cornellà de Llobregat, Barcelona",
+        "description": "Durante mi período de prácticas, participé en el desarrollo de soluciones software innovadoras, centrándome en:",
+        "achievements": [
+          "Desarrollo de una aplicación de automatización en Python que procesó más de 1.000 registros diarios en Excel, reduciendo el tiempo de procesamiento manual en un 70%.",
+          "Implementación de scripts para la extracción y transformación de datos, mejorando la precisión de los datos en un 95% y acelerando el procesamiento en un 50%.",
+          "Participación activa en reuniones semanales de equipo, contribuyendo a la planificación de proyectos y presentando avances, lo que llevó a un aumento del 15% en la productividad del equipo.",
+          "Creación de documentación detallada para los procesos y soluciones implementadas, facilitando la transferencia de conocimientos y reduciendo el tiempo de incorporación de nuevos miembros del equipo en un 20%."
+        ],
+        "technologies": ["Python", "Excel"],
+        "skills": [
+          "Trabajo en equipo",
+          "Metodologías ágiles",
+          "Resolución de problemas",
+          "Comunicación efectiva",
+          "Documentación técnica"
+        ]
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "frontend_title": "Frontend",
+    "backend_title": "Backend",
+    "database_title": "Base de Datos"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "github_button": "GitHub",
+    "demo_button": "Ver Demo",
+    "list": [
+      {
+        "title": "Portfolio Personal",
+        "description": "Mi sitio web personal desarrollado con Astro y Tailwind CSS. Este proyecto muestra mis habilidades en el desarrollo web moderno, implementando características como modo oscuro, internacionalización (i18n) y diseño responsive. Utiliza tecnologías como Astro para el rendimiento óptimo, Tailwind CSS para el diseño, y JavaScript vanilla para la interactividad."
+      },
+      {
+        "title": "Proyecto de Gestión de Hoteles",
+        "description": "Aplicación web para la gestión de hoteles desarrollada con Laravel en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades como gestión de habitaciones, reservas, hoteles y clientes. Aparte, de una web de la cadena de hoteles, más visual y desarrollada con Laravel y Vue.js, a partir de APIs de la base de datos de la web de gestion."
+      },
+      {
+        "title": "Proyecto de Gestión de Subastas",
+        "description": "Aplicación web para la gestión de subastas desarrollada con PHP en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades para el rol de subhastador que es la persona que gestiona todas las subastas y productos de los clientes y para los clientes donde pueden subir los productos."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contacto",
+    "cta": "¿Quieres trabajar conmigo? ¡Hablemos!",
+    "name_label": "Nombre",
+    "email_label": "Email",
+    "message_label": "Mensaje",
+    "submit_button": "Enviar mensaje",
+    "social": [
+      { "name": "GitHub" },
+      { "name": "LinkedIn" }
+    ]
+  },
+  "page": {
+    "title": "Óscar Ródenas - Desarrollador Web"
+  },
+  "footer": {
+    "copyright": "© {year} Óscar Ródenas. Todos los derechos reservados."
+  }
+}

@@ -1,35 +1,13 @@
 ---
-const experiences = [
-  {
-    title: "Prácticas FCT de Desarrollo de Aplicaciones Web Grado Superior",
-    company: "IRIS Technology Solutions",
-    period: "Septiembre 2024 - Enero 2025",
-    location: "Cornellà de Llobregat, Barcelona",
-    description: "Durante mi período de prácticas, participé en el desarrollo de soluciones software innovadoras, centrándome en:",
-    achievements: [
-      "Desarrollo de una aplicación de automatización utilizando Python para el procesamiento de datos de archivos Excel.",
-      "Implementación de scripts para la extracción y transformación de datos en archivos CSV.",
-      "Participación en reuniones semanales de equipo y presentación de avances.",
-      "Documentación detallada de procesos y soluciones implementadas"
-    ],
-    technologies: ["Python", "Excel", "Google Meet"],
-    skills: [
-      "Trabajo en equipo",
-      "Metodologías ágiles",
-      "Resolución de problemas",
-      "Comunicación efectiva",
-      "Documentación técnica"
-    ]
-  },
-];
+const { t } = Astro.props;
 ---
 <section id="experiencia" class="py-16 bg-gray-50 dark:bg-gray-800">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Experiencia</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">{t('experience.title')}</h2>
     <div class="max-w-4xl mx-auto space-y-12">
-      {experiences.map((experience, index) => (
+      {t('experience.list').map((experience, index) => (
         <div class="relative">
-          {index !== experiences.length - 1 && (
+          {index !== t('experience.list').length - 1 && (
             <div class="absolute left-8 top-16 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
           )}
           <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8">
@@ -65,7 +43,7 @@ const experiences = [
                 <p class="text-gray-700 dark:text-gray-300 mb-4">{experience.description}</p>
                 <div class="space-y-4">
                   <div>
-                    <h4 class="font-medium mb-2 text-primary dark:text-secondary">Logros principales:</h4>
+                    <h4 class="font-medium mb-2 text-primary dark:text-secondary">{t('experience.achievements_title')}</h4>
                     <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300">
                       {experience.achievements.map(achievement => (
                         <li>{achievement}</li>
@@ -73,7 +51,7 @@ const experiences = [
                     </ul>
                   </div>
                   <div class="space-y-3">
-                    <h4 class="font-medium text-primary dark:text-secondary">Tecnologías:</h4>
+                    <h4 class="font-medium text-primary dark:text-secondary">{t('experience.technologies_title')}</h4>
                     <div class="flex flex-wrap gap-2">
                       {experience.technologies.map(tech => (
                         <span class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm">
@@ -83,7 +61,7 @@ const experiences = [
                     </div>
                   </div>
                   <div class="space-y-3">
-                    <h4 class="font-medium text-primary dark:text-secondary">Habilidades desarrolladas:</h4>
+                    <h4 class="font-medium text-primary dark:text-secondary">{t('experience.skills_title')}</h4>
                     <div class="flex flex-wrap gap-2">
                       {experience.skills.map(skill => (
                         <span class="px-3 py-1 bg-primary/10 text-primary dark:bg-secondary/10 dark:text-secondary rounded-full text-sm">

@@ -1,47 +1,28 @@
 ---
-const languages = [
-  { code: 'es', name: 'Español' },
-  { code: 'ca', name: 'Català' },
-  { code: 'en', name: 'English' }
-];
+import { languages, defaultLang } from '../../i18n/ui';
+
+const { lang } = Astro.props;
+const path = Astro.url.pathname;
+
+const pathWithoutLang = path.startsWith(`/${lang}`) ? path.slice(`/${lang}`.length) : path;
 ---
 
-<div class="relative inline-block text-left">
-  <select
-    id="language-select"
-    class="bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-1.5 text-sm"
-  >
-    {languages.map(lang => (
-      <option value={lang.code}>{lang.name}</option>
+<div class="relative group">
+  <button class="bg-transparent border border-gray-300 dark:border-gray-700 rounded-lg px-3 py-1.5 text-sm flex items-center gap-2" aria-label="Language selector">
+    <span>{languages[lang]}</span>
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+  </button>
+  <ul class="absolute hidden group-hover:block bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded-lg mt-1 w-full" aria-label="Available languages">
+    {Object.entries(languages).map(([code, name]) => (
+      <li>
+        <a 
+          href={code === defaultLang ? pathWithoutLang : `/${code}${pathWithoutLang}`} 
+          class="block px-3 py-1.5 text-sm hover:bg-gray-100 dark:hover:bg-gray-700"
+          aria-current={code === lang ? "page" : false}
+        >
+          {name}
+        </a>
+      </li>
     ))}
-  </select>
+  </ul>
 </div>
-
-<script>
-  const select = document.querySelector('#language-select');
-  select.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    const path = window.location.pathname;
-    const newPath = lang === 'es' ? path : `/${lang}${path}`;
-    window.location.href = newPath;
-  });
-
-  // Apply CSS styles to each option based on theme
-  const options = select.querySelectorAll('option');
-  const isDarkTheme = document.documentElement.classList.contains('dark');
-
-  options.forEach(option => {
-    if (isDarkTheme) {
-      option.style.backgroundColor = 'rgb(17 24 39 / var(--tw-bg-opacity, 1))';
-      option.style.color = '#ffffff';
-    } else {
-      option.style.backgroundColor = '#ffffff';
-      option.style.color = '#000000';
-    }
-    option.style.border = 'none';
-    option.style.padding = '8px 16px';
-    option.style.outline = 'none';
-    option.style.transition = 'background-color 0.3s ease, color 0.3s ease';
-    option.style.cursor = 'pointer';
-  });
-</script>

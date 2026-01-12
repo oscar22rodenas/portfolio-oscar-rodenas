@@ -11,78 +11,52 @@ import PythonImg from "./icon/Python.astro";
 import MySqlImg from "./icon/MySql.astro";
 import MongoImg from "./icon/Mongo.astro";
 
-const skills = {
-  frontend: [
-    {
-      title: "HTML",
-      img: HtmlImg,
-    },
-    {
-      title: "CSS",
-      img: CssImg,
-    },
-    {
-      title: "JavaScript",
-      img: JsImg,
-    },
-    {
-      title: "Vue.js",
-      img: VueImg,
-    },
-    {
-      title: "Astro",
-      img: AstroImg,
-    },
-    {
-      title: "Tailwind",
-      img: TailwindImg,
-    },
-  ],
-  backend: [
-    {
-      title: "PHP",
-      img: PhpImg,
-    },
-    {
-      title: "Laravel",
-      img: LaravelImg,
-    },
-    {
-      title: "Python",
-      img: PythonImg,
-    },
-  ],
-  database: [
-    {
-      title: "MySQL",
-      img: MySqlImg,
-    },
-    {
-      title: "PostgresSQL",
-      img: null, // No image available
-    },
-    {
-      title: "SQLite",
-      img: null, // No image available
-    },
-    {
-      title: "MongoDB",
-      img: MongoImg,
-    },
-  ],
+const { t } = Astro.props;
+
+// Keep original image imports, link them to the translated titles
+const skillImages = {
+  "HTML": HtmlImg,
+  "CSS": CssImg,
+  "JavaScript": JsImg,
+  "Vue.js": VueImg,
+  "Astro": AstroImg,
+  "Tailwind": TailwindImg,
+  "PHP": PhpImg,
+  "Laravel": LaravelImg,
+  "Python": PythonImg,
+  "MySQL": MySqlImg,
+  "PostgresSQL": null,
+  "SQLite": null,
+  "MongoDB": MongoImg,
 };
+
+const frontendSkills = t('skills.list.frontend').map(skill => ({
+  title: skill.title,
+  img: skillImages[skill.title]
+}));
+
+const backendSkills = t('skills.list.backend').map(skill => ({
+  title: skill.title,
+  img: skillImages[skill.title]
+}));
+
+const databaseSkills = t('skills.list.database').map(skill => ({
+  title: skill.title,
+  img: skillImages[skill.title]
+}));
+
 ---
 
 <section id="habilidades" class="py-16 bg-gray-50 dark:bg-gray-800">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Habilidades Técnicas</h2>
+    <h2 class="text-3xl font-bold text-center mb-12">{t('skills.title')}</h2>
     <div class="max-w-3xl mx-auto">
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
-          <h3 class="text-xl font-semibold mb-4">Frontend</h3>
+          <h3 class="text-xl font-semibold mb-4">{t('skills.frontend_title')}</h3>
           <div class="flex flex-wrap gap-2">
             {
-              skills.frontend.map((skill) => (
+              frontendSkills.map((skill) => (
                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm flex items-center gap-2">
                   {skill.img && <skill.img class="w-6 h-6" />}
                   {skill.title}
@@ -93,10 +67,10 @@ const skills = {
         </div>
 
         <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
-          <h3 class="text-xl font-semibold mb-4">Backend</h3>
+          <h3 class="text-xl font-semibold mb-4">{t('skills.backend_title')}</h3>
           <div class="flex flex-wrap gap-2">
             {
-              skills.backend.map((skill) => (
+              backendSkills.map((skill) => (
                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm flex items-center gap-2">
                   {skill.img && <skill.img class="w-6 h-6" />}
                   {skill.title}
@@ -107,10 +81,10 @@ const skills = {
         </div>
 
         <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
-          <h3 class="text-xl font-semibold mb-4">Base de Datos</h3>
+          <h3 class="text-xl font-semibold mb-4">{t('skills.database_title')}</h3>
           <div class="flex flex-wrap gap-2">
             {
-              skills.database.map((skill) => (
+              databaseSkills.map((skill) => (
                 <span class="px-3 py-1 bg-gray-100 dark:bg-gray-600 rounded-full text-sm flex items-center gap-2">
                   {skill.img && <skill.img class="w-6 h-6" />}
                   {skill.title}

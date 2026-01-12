@@ -1,39 +1,41 @@
 ---
 import ThemeToggle from './ThemeToggle.astro';
 import LanguageSelector from './LanguageSelector.astro';
+import HeaderLink from './HeaderLink.astro';
+
+const { lang, t } = Astro.props;
 
 const navItems = [
-  { href: '#inicio', text: 'Inicio' },
-  { href: '#sobre-mi', text: 'Sobre mí' },
-  { href: '#experiencia', text: 'Experiencia' },
-  { href: '#proyectos', text: 'Proyectos' },
-  { href: '#contacto', text: 'Contacto' },
+  { href: '#inicio', text: t('nav.home') },
+  { href: '#sobre-mi', text: t('nav.about') },
+  { href: '#experiencia', text: t('nav.experience') },
+  { href: '#proyectos', text: t('nav.projects') },
+  { href: '#contacto', text: t('nav.contact') },
 ];
+
+const homeLink = lang === 'es' ? '/' : `/${lang}`;
 ---
 
 <header class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50 py-4">
   <div class="container mx-auto px-4">
-    <nav class="flex items-center justify-between">
-      <a href="/" class="inline-flex items-center gap-2 text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-        <img class="w-12 h-12 rounded-full" src="/assets/profile.jpg" alt="logo">
+    <nav class="flex items-center justify-between" aria-label="Main navigation">
+      <a href={homeLink} class="inline-flex items-center gap-2 text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+        <img class="w-12 h-12 rounded-full" src="/assets/profile.jpeg" alt={t('hero.alt')}>
         Óscar Ródenas
       </a>
 
       <div class="hidden md:flex items-center gap-8">
         {navItems.map(item => (
-          <a 
-            href={item.href}
-            class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-secondary transition-colors"
-          >
+          <HeaderLink href={item.href}>
             {item.text}
-          </a>
+          </HeaderLink>
         ))}
       </div>
 
       <div class="flex items-center gap-4">
-        <LanguageSelector />
+        <LanguageSelector lang={lang} />
         <ThemeToggle />
       </div>
     </nav>
   </div>
-</header>
+header>
