@@ -9,7 +9,7 @@
   "hero": {
     "alt": "Óscar Ródenas",
     "title": "¡Hola! Soy Óscar Ródenas",
-    "description": "Desarrollador Full-Stack especializado en Laravel y Vue.js, con experiencia en automatización de procesos y gestión de datos. Busco mi primera oportunidad profesional en desarrollo web.",
+    "description": "Desarrollador Full-Stack especializado en Laravel y Vue.js. Busco mi primera oportunidad profesional en desarrollo web.",
     "contact_button": "Contáctame",
     "cv_button": "Descargar CV"
   },
@@ -18,14 +18,14 @@
     "card": {
         "name": "Óscar Ródenas Luján",
         "title": "Desarrollador Full-Stack",
-        "age": "21 años",
-        "location": "📍 Viladecavalls, Barcelona, España"
+        "age": "22 años",
+        "location": "Viladecavalls, Barcelona, España"
     },
     "education": {
         "title": "Formación Académica",
         "degree": "Técnico Superior en Desarrollo de Aplicaciones Web (DAW)",
         "institution": "Institut Nicolau Copèrnic - 2023-2025",
-        "description": "Formación especializada en desarrollo web full-stack, con énfasis en tecnologías modernas como Laravel, Vue.js y arquitecturas MVC. Experiencia práctica en proyectos reales durante el período de prácticas profesionales."
+        "description": "Formación especializada en desarrollo web full-stack, con énfasis en tecnologías modernas como Laravel, Vue.js y arquitecturas MVC. Experiencia práctica en proyectos reales."
     },
     "languages": {
         "title": "Idiomas",
@@ -74,7 +74,7 @@
         "location": "Cornellà de Llobregat, Barcelona",
         "description": "Durante mi período de prácticas, participé en el desarrollo de soluciones software innovadoras, centrándome en:",
         "achievements": [
-          "Desarrollo de una aplicación de automatización en Python que procesó más de 1.000 registros diarios en Excel, reduciendo el tiempo de procesamiento manual en un 70%.",
+          "Desarrollo de una aplicación de automatización en Python que procesó más de 1.000 registros en Excel, reduciendo el tiempo de procesamiento manual en un 70%.",
           "Implementación de scripts para la extracción y transformación de datos, mejorando la precisión de los datos en un 95% y acelerando el procesamiento en un 50%.",
           "Participación activa en reuniones semanales de equipo, contribuyendo a la planificación de proyectos y presentando avances, lo que llevó a un aumento del 15% en la productividad del equipo.",
           "Creación de documentación detallada para los procesos y soluciones implementadas, facilitando la transferencia de conocimientos y reduciendo el tiempo de incorporación de nuevos miembros del equipo en un 20%."
@@ -94,7 +94,28 @@
     "title": "Habilidades Técnicas",
     "frontend_title": "Frontend",
     "backend_title": "Backend",
-    "database_title": "Base de Datos"
+    "database_title": "Base de Datos",
+    "list": {
+      "frontend": [
+        { "title": "HTML" },
+        { "title": "CSS" },
+        { "title": "JavaScript" },
+        { "title": "Vue.js" },
+        { "title": "Astro" },
+        { "title": "Tailwind" }
+      ],
+      "backend": [
+        { "title": "PHP" },
+        { "title": "Laravel" },
+        { "title": "Python" }
+      ],
+      "database": [
+        { "title": "MySQL" },
+        { "title": "PostgresSQL" },
+        { "title": "SQLite" },
+        { "title": "MongoDB" }
+      ]
+    }
   },
   "projects": {
     "title": "Proyectos",
@@ -103,15 +124,18 @@
     "list": [
       {
         "title": "Portfolio Personal",
-        "description": "Mi sitio web personal desarrollado con Astro y Tailwind CSS. Este proyecto muestra mis habilidades en el desarrollo web moderno, implementando características como modo oscuro, internacionalización (i18n) y diseño responsive. Utiliza tecnologías como Astro para el rendimiento óptimo, Tailwind CSS para el diseño, y JavaScript vanilla para la interactividad."
+        "description": "Mi sitio web personal desarrollado con Astro y Tailwind CSS. Este proyecto muestra mis habilidades en el desarrollo web moderno, implementando características como modo oscuro, internacionalización (i18n) y diseño responsivo. Utiliza tecnologías como Astro para el rendimiento óptimo, Tailwind CSS para el diseño, y JavaScript vanilla para la interactividad.",
+        "technologies": ["Astro", "Tailwind CSS", "JavaScript"]
       },
       {
         "title": "Proyecto de Gestión de Hoteles",
-        "description": "Aplicación web para la gestión de hoteles desarrollada con Laravel en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades como gestión de habitaciones, reservas, hoteles y clientes. Aparte, de una web de la cadena de hoteles, más visual y desarrollada con Laravel y Vue.js, a partir de APIs de la base de datos de la web de gestion."
+        "description": "Aplicación web para la gestión de hoteles desarrollada con Laravel en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades como gestión de habitaciones, reservas, hoteles y clientes. Aparte, de una web de la cadena de hoteles, más visual y desarrollada con Laravel y Vue.js, a partir de APIs de la base de datos de la web de gestion.",
+        "technologies": ["Laravel", "Vue.js", "HTML", "CSS", "JavaScript", "MySQL"]
       },
       {
         "title": "Proyecto de Gestión de Subastas",
-        "description": "Aplicación web para la gestión de subastas desarrollada con PHP en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades para el rol de subhastador que es la persona que gestiona todas las subastas y productos de los clientes y para los clientes donde pueden subir los productos."
+        "description": "Aplicación web para la gestión de subastas desarrollada con PHP en el back-end y HTML, CSS y JavaScript en el front-end. Incluye funcionalidades para el rol de subhastador que es la persona que gestiona todas las subastas y productos de los clientes y para los clientes donde pueden subir los productos.",
+        "technologies": ["PHP", "HTML", "CSS", "JavaScript", "MySQL"]
       }
     ]
   },
@@ -131,6 +155,6 @@
     "title": "Óscar Ródenas - Desarrollador Web"
   },
   "footer": {
-    "copyright": "© {year} Óscar Ródenas. Todos los derechos reservados."
+    "copyright": "© 2026 Óscar Ródenas. Todos los derechos reservados."
   }
 }

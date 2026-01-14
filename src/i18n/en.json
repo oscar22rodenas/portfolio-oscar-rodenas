@@ -9,7 +9,7 @@
   "hero": {
     "alt": "Óscar Ródenas",
     "title": "Hi! I'm Óscar Ródenas",
-    "description": "Full-Stack Developer specializing in Laravel and Vue.js, with experience in process automation and data management. I'm looking for my first professional opportunity in web development.",
+    "description": "Full-Stack Developer specializing in Laravel and Vue.js. I'm looking for my first professional opportunity in web development.",
     "contact_button": "Contact Me",
     "cv_button": "Download CV"
   },
@@ -18,14 +18,14 @@
     "card": {
         "name": "Óscar Ródenas Luján",
         "title": "Full-Stack Developer",
-        "age": "21 years old",
-        "location": "📍 Viladecavalls, Barcelona, Spain"
+        "age": "22 years old",
+        "location": "Viladecavalls, Barcelona, Spain"
     },
     "education": {
         "title": "Academic Background",
         "degree": "Higher Technician in Web Application Development (DAW)",
         "institution": "Institut Nicolau Copèrnic - 2023-2025",
-        "description": "Specialized training in full-stack web development, with an emphasis on modern technologies such as Laravel, Vue.js, and MVC architectures. Practical experience in real projects during the professional internship period."
+        "description": "Specialized training in full-stack web development, with an emphasis on modern technologies such as Laravel, Vue.js, and MVC architectures. Practical experience in real projects."
     },
     "languages": {
         "title": "Languages",
@@ -94,7 +94,28 @@
     "title": "Technical Skills",
     "frontend_title": "Frontend",
     "backend_title": "Backend",
-    "database_title": "Database"
+    "database_title": "Database",
+    "list": {
+      "frontend": [
+        { "title": "HTML" },
+        { "title": "CSS" },
+        { "title": "JavaScript" },
+        { "title": "Vue.js" },
+        { "title": "Astro" },
+        { "title": "Tailwind" }
+      ],
+      "backend": [
+        { "title": "PHP" },
+        { "title": "Laravel" },
+        { "title": "Python" }
+      ],
+      "database": [
+        { "title": "MySQL" },
+        { "title": "PostgresSQL" },
+        { "title": "SQLite" },
+        { "title": "MongoDB" }
+      ]
+    }
   },
   "projects": {
     "title": "Projects",
@@ -103,15 +124,18 @@
     "list": [
       {
         "title": "Personal Portfolio",
-        "description": "My personal website developed with Astro and Tailwind CSS. This project showcases my skills in modern web development, implementing features like dark mode, internationalization (i18n), and responsive design. It uses technologies such as Astro for optimal performance, Tailwind CSS for design, and vanilla JavaScript for interactivity."
+        "description": "My personal website developed with Astro and Tailwind CSS. This project showcases my skills in modern web development, implementing features like dark mode, internationalization (i18n), and responsive design. It uses technologies such as Astro for optimal performance, Tailwind CSS for design, and vanilla JavaScript for interactivity.",
+        "technologies": ["Astro", "Tailwind CSS", "JavaScript"]
       },
       {
         "title": "Hotel Management Project",
-        "description": "Web application for hotel management developed with Laravel on the back-end and HTML, CSS, and JavaScript on the front-end. It includes features for managing rooms, reservations, hotels, and clients. Additionally, a more visual website for the hotel chain was developed with Laravel and Vue.js, using APIs from the management web's database."
+        "description": "Web application for hotel management developed with Laravel on the back-end and HTML, CSS, and JavaScript on the front-end. It includes features for managing rooms, reservations, hotels, and clients. Additionally, a more visual website for the hotel chain was developed with Laravel and Vue.js, using APIs from the management web's database.",
+        "technologies": ["Laravel", "Vue.js", "HTML", "CSS", "JavaScript", "MySQL"]
       },
       {
         "title": "Auction Management Project",
-        "description": "Web application for auction management developed with PHP on the back-end and HTML, CSS, and JavaScript on the front-end. It includes functionalities for the auctioneer role, who manages all auctions and client products, and for clients, who can upload their products."
+        "description": "Web application for auction management developed with PHP on the back-end and HTML, CSS, and JavaScript on the front-end. It includes functionalities for the auctioneer role, who manages all auctions and client products, and for clients, who can upload their products.",
+        "technologies": ["PHP", "HTML", "CSS", "JavaScript", "MySQL"]
       }
     ]
   },
@@ -131,6 +155,6 @@
     "title": "Óscar Ródenas - Web Developer"
   },
   "footer": {
-    "copyright": "© {year} Óscar Ródenas. All rights reserved."
+    "copyright": "© 2026 Óscar Ródenas. All rights reserved."
   }
 }

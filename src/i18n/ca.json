@@ -9,7 +9,7 @@
   "hero": {
     "alt": "Óscar Ródenas",
     "title": "Hola! Sóc l'Óscar Ródenas",
-    "description": "Desenvolupador Full-Stack especialitzat en Laravel i Vue.js, amb experiència en automatització de processos i gestió de dades. Busco la meva primera oportunitat professional en desenvolupament web.",
+    "description": "Desenvolupador Full-Stack especialitzat en Laravel i Vue.js. Busco la meva primera oportunitat professional en desenvolupament web.",
     "contact_button": "Contacta'm",
     "cv_button": "Descarregar CV"
   },
@@ -18,14 +18,14 @@
     "card": {
         "name": "Óscar Ródenas Luján",
         "title": "Desenvolupador Full-Stack",
-        "age": "21 anys",
-        "location": "📍 Viladecavalls, Barcelona, Espanya"
+        "age": "22 anys",
+        "location": "Viladecavalls, Barcelona, Espanya"
     },
     "education": {
         "title": "Formació Acadèmica",
         "degree": "Tècnic Superior en Desenvolupament d'Aplicacions Web (DAW)",
         "institution": "Institut Nicolau Copèrnic - 2023-2025",
-        "description": "Formació especialitzada en desenvolupament web full-stack, amb èmfasi en tecnologies modernes com Laravel, Vue.js i arquitectures MVC. Experiència pràctica en projectes reals durant el període de pràctiques professionals."
+        "description": "Formació especialitzada en desenvolupament web full-stack, amb èmfasi en tecnologies modernes com Laravel, Vue.js i arquitectures MVC. Experiència pràctica en projectes reals."
     },
     "languages": {
         "title": "Idiomes",
@@ -94,7 +94,28 @@
     "title": "Habilitats Tècniques",
     "frontend_title": "Frontend",
     "backend_title": "Backend",
-    "database_title": "Base de Dades"
+    "database_title": "Base de Dades",
+    "list": {
+      "frontend": [
+        { "title": "HTML" },
+        { "title": "CSS" },
+        { "title": "JavaScript" },
+        { "title": "Vue.js" },
+        { "title": "Astro" },
+        { "title": "Tailwind" }
+      ],
+      "backend": [
+        { "title": "PHP" },
+        { "title": "Laravel" },
+        { "title": "Python" }
+      ],
+      "database": [
+        { "title": "MySQL" },
+        { "title": "PostgresSQL" },
+        { "title": "SQLite" },
+        { "title": "MongoDB" }
+      ]
+    }
   },
   "projects": {
     "title": "Projectes",
@@ -103,15 +124,18 @@
     "list": [
       {
         "title": "Portfoli Personal",
-        "description": "El meu lloc web personal desenvolupat amb Astro i Tailwind CSS. Aquest projecte mostra les meves habilitats en el desenvolupament web modern, implementant característiques com el mode fosc, internacionalització (i18n) i disseny responsiu. Utilitza tecnologies com Astro per a un rendiment òptim, Tailwind CSS pel disseny, i JavaScript vanilla per a la interactivitat."
+        "description": "El meu lloc web personal desenvolupat amb Astro i Tailwind CSS. Aquest projecte mostra les meves habilitats en el desenvolupament web modern, implementant característiques com el mode fosc, internacionalització (i18n) i disseny responsiu. Utilitza tecnologies com Astro per a un rendiment òptim, Tailwind CSS pel disseny, i JavaScript vanilla per a la interactivitat.",
+        "technologies": ["Astro", "Tailwind CSS", "JavaScript"]
       },
       {
         "title": "Projecte de Gestió d'Hotels",
-        "description": "Aplicació web per a la gestió d'hotels desenvolupada amb Laravel al back-end i HTML, CSS i JavaScript al front-end. Inclou funcionalitats com gestió d'habitacions, reserves, hotels i clients. A part, d'una web de la cadena d'hotels, més visual i desenvolupada amb Laravel i Vue.js, a partir d'APIs de la base de dades de la web de gestió."
+        "description": "Aplicació web per a la gestió d'hotels desenvolupada amb Laravel al back-end i HTML, CSS i JavaScript al front-end. Inclou funcionalitats com gestió d'habitacions, reserves, hotels i clients. A part, d'una web de la cadena d'hotels, més visual i desenvolupada amb Laravel i Vue.js, a partir d'APIs de la base de dades de la web de gestió.",
+        "technologies": ["Laravel", "Vue.js", "HTML", "CSS", "JavaScript", "MySQL"]
       },
       {
         "title": "Projecte de Gestió de Subhastes",
-        "description": "Aplicació web per a la gestió de subhastes desenvolupada amb PHP al back-end i HTML, CSS i JavaScript al front-end. Inclou funcionalitats per al rol de subhastador que és la persona que gestiona totes les subhastes i productes dels clients i per als clients on poden pujar els productes."
+        "description": "Aplicació web per a la gestió de subhastes desenvolupada amb PHP al back-end i HTML, CSS i JavaScript al front-end. Inclou funcionalitats per al rol de subhastador que és la persona que gestiona totes les subhastes i productes dels clients i per als clients on poden pujar els productes.",
+        "technologies": ["PHP", "HTML", "CSS", "JavaScript", "MySQL"]
       }
     ]
   },
@@ -131,6 +155,6 @@
     "title": "Óscar Ródenas - Desenvolupador Web"
   },
   "footer": {
-    "copyright": "© {year} Óscar Ródenas. Tots els drets reservats."
+    "copyright": "© 2026 Óscar Ródenas. Tots els drets reservats."
   }
 }
